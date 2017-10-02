@@ -1,0 +1,92 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+# [Jimenez] takeaway.com challenge for devops
+# ------------------------------------------------------------------
+
+VERSION=0.1.0
+SUBJECT=jimenez-devops-challenge
+read -r -d '' USAGE << EOM
+challenge: Operates the DevOps challenge Vagrantfile.
+usage: challenge [options]
+  -d (D)estroy the cluster (with confirmation)
+  -u Start (u)p the cluster
+  -p (P)rovision the cluster
+  -s (S)top the cluster
+  -e Susp(e)nd the cluster
+  -r (R)esume the cluster
+  -v Print script (v)ersion
+  -h Print this (h)elp
+EOM
+
+# --- Options processing -------------------------------------------
+if [ $# == 0 ] ; then
+    echo -e "$USAGE"
+    exit 1;
+fi
+
+while getopts ":duspervh" optname
+  do
+    case "$optname" in
+      "d")
+	echo -e "Destroying the cluster CANNOT be undone.\nYou WILL lose persistent storage! Are you sure?"
+	select yn in "Yes" "No"; do
+    	 case $yn in
+        	Yes ) vagrant destroy -f; break;;
+        	No ) exit;;
+   	 esac
+	done
+	;;
+      "u")
+        vagrant up;
+        ;;
+      "p")
+        vagrant provision;
+        ;;
+      "s")
+        vagrant halt;
+        ;;
+      "e")
+        vagrant suspend;
+	;;
+      "r")
+	vagrant resume;
+	;;
+      "v")
+        echo "challenge Version $VERSION"
+        exit 0;
+        ;;
+      "h")
+        echo -e "$USAGE"
+        exit 0;
+        ;;
+      "?")
+        echo "Unknown option $OPTARG"
+        exit 0;
+        ;;
+      *)
+        echo "Unknown error while processing options"
+        exit 0;
+        ;;
+    esac
+  done
+
+shift $(($OPTIND - 1))
+
+param1=$1
+param2=$2
+
+# --- Locks -------------------------------------------------------
+LOCK_FILE=/tmp/$SUBJECT.lock
+if [ -f "$LOCK_FILE" ]; then
+   echo "Script is already running"
+   exit
+fi
+
+trap "rm -f $LOCK_FILE" EXIT
+touch $LOCK_FILE
+
+# --- Body --------------------------------------------------------
+#  SCRIPT LOGIC GOES HERE
+echo $param1
+echo $param2
+# -----------------------------------------------------------------
