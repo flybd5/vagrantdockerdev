@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # -------
-# Takeaway.com Systems Engineer Challenge
+# Systems Engineer Challenge
 # Juan Jimenez, October 2017
 #
 # Goals:
