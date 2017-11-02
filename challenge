@@ -1,6 +1,6 @@
 #!/bin/bash
 # ------------------------------------------------------------------
-# [Jimenez] takeaway.com challenge for devops
+# [Jimenez] devops challenge
 # ------------------------------------------------------------------
 
 VERSION=0.1.0
