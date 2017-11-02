@@ -7,7 +7,7 @@
 #
 # Goals:
 #
-#   - Done: Install vagrant (1.9.8) and virtualbox (5.1.26) (Assume already installed as per Charles)
+#   - Done: Install vagrant (1.9.8) and virtualbox (5.1.26) (Assumes already installed)
 #   - Done: Create a 3-node vagrant machine cluster based on ubuntu 16.04
 #   - Done For each node make sure you attach 2 new “block devices” as this will be needed for
 #     creating pools of persistent storage across hosts
