@@ -6,7 +6,7 @@ In detail:
 
 - The project assumes Vagrant and Virtualbox are already installed.
 - Creates a three-node Vagrant machine cluster based on Ubuntu 16.04
-- For each node attaches two new “block devices” (the same devices on all nodes) to create pools of persistent storage across hosts. This is only done if the block devices do not already exist.
+- For each node creates and attaches two new “block devices” (the same devices on all nodes) to create pools of persistent storage across hosts. The creation is only done if the block devices do not already exist, default is 1GB, can be configured in the Vagrantfile.
 - Installs the Docker daemon (17.06.1-ce) across all the nodes
 - Sets up a software defined networking layer across the Docker hosts to enable cross-host container communication
 - Sets up a persistent storage solution across the Docker hosts to make sure data is never lost in the event of container failures or cross-host rescheduling.
