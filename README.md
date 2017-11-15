@@ -16,6 +16,7 @@ In detail:
 
 Run the "challenge" bash script for instructions on how to manage this project.
 
+```
 usage: challenge [options]
   -d (D)estroy the cluster (with confirmation)
   -u Start (u)p the cluster
@@ -25,3 +26,4 @@ usage: challenge [options]
   -r (R)esume the cluster
   -v Print script (v)ersion
   -h Print this (h)elp
+```
