@@ -1,10 +1,10 @@
 This project is used to implement an example clustered Docker development environment using Vagrant and Virtualbox. 
 
-This project implemented the creation of a monitored local development environment simulating a cluster of Docker hosts with additional configuration to enable persistent storage of the container workload data and cross-host communication among the various docker containers running on the hosts. It also sets up a container scheduler across the Docker hosts to manage container workloads across the hosts.
+This project implements the creation of a monitored local development environment simulating a cluster of Docker hosts with additional configuration to enable persistent storage of the container workload data and cross-host communication among the various Docker containers running on the hosts. It also sets up a container scheduler across the Docker hosts to manage container workloads.
 
 In detail:
 
-- Project assumes Vagrant and Virtualbox are already installed.
+- The project assumes Vagrant and Virtualbox are already installed.
 - Creates a three-node Vagrant machine cluster based on Ubuntu 16.04
 - For each node attaches two new “block devices” (the same devices on all nodes) to create pools of persistent storage across hosts. This is only done if the block devices do not already exist.
 - Installs the Docker daemon (17.06.1-ce) across all the nodes
