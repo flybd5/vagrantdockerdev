@@ -14,4 +14,14 @@ In detail:
 - Sets up the Nomad container scheduler (0.6.0) across the three docker hosts
 - Uses the Nomad scheduler to schedule the Cadvisor container monitor across the Docker hosts
 
-Run the "challenge" script for instructions on how to manage this project.
+Run the "challenge" bash script for instructions on how to manage this project.
+
+usage: challenge [options]
+  -d (D)estroy the cluster (with confirmation)
+  -u Start (u)p the cluster
+  -p (P)rovision the cluster
+  -s (S)top the cluster
+  -e Susp(e)nd the cluster
+  -r (R)esume the cluster
+  -v Print script (v)ersion
+  -h Print this (h)elp
