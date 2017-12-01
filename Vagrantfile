@@ -9,7 +9,7 @@
 #
 #   - Done: Install vagrant (1.9.8) and virtualbox (5.1.26) (Assumes already installed)
 #   - Done: Create a 3-node vagrant machine cluster based on ubuntu 16.04
-#   - Done For each node make sure you attach 2 new “block devices” as this will be needed for
+#   - Done: For each node make sure you attach 2 new “block devices” as this will be needed for
 #     creating pools of persistent storage across hosts
 #   - Done: Install the docker daemon (17.06.1-ce) across all the nodes
 #   - Done: Setup a software defined networking layer across the docker hosts to enable
