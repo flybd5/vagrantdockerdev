@@ -36,6 +36,7 @@ usage: challenge [options]
 
 ## Dependencies
 
+* Vagrant
 * VirtualBox
 * Docker-CE
 * Enough free disk space for three 1GB vdisks
